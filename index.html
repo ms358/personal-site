@@ -46,87 +46,81 @@
 			height: auto;
 		}
 
-		.projects-grid {
-			display: grid;
-			gap: 24px;
+		main article {
+			display: block;
+			background-color: transparent;
+			border: 1px solid rgba(212, 212, 212, 0.25);
+			border-radius: 10px;
+			padding: 20px;
 			margin-top: 20px;
 		}
 
-		.project-card {
-			background-color: rgb(45, 45, 45);
-			border: 1px solid rgb(70, 70, 70);
-			border-radius: 12px;
-			padding: 20px;
-		}
-
-		.project-card h4 {
+		main article h4 {
 			margin: 0 0 12px;
 			font-size: 1.1rem;
 		}
 
-		.project-card p {
+		main article p {
 			margin: 0 0 12px;
 		}
 
-		.project-card img,
-		.project-card video {
+		main article img,
+		main article video {
 			display: block;
 			width: 100%;
 			border-radius: 8px;
 			margin-top: 8px;
 		}
 
-		.server-slideshow {
+		.slideshow {
 			position: relative;
 			margin-top: 20px;
-			border: 1px solid rgb(70, 70, 70);
-			border-radius: 12px;
 			overflow: hidden;
-			background-color: rgb(45, 45, 45);
+			background-color: transparent;
 		}
 
-		.server-slideshow input {
+		.slideshow input {
 			display: none;
 		}
 
-		.server-slides {
+		.slides {
 			display: flex;
 			width: 400%;
 			transition: transform 0.35s ease;
 		}
 
-		.server-slide {
+		.slide {
 			width: 25%;
 			box-sizing: border-box;
-			padding: 20px;
+			padding: 20px 18px;
 			flex-shrink: 0;
 		}
 
-		#server-1:checked ~ .server-slides {
+		#server-1:checked ~ .slides {
 			transform: translateX(0%);
 		}
 
-		#server-2:checked ~ .server-slides {
+		#server-2:checked ~ .slides {
 			transform: translateX(-25%);
 		}
 
-		#server-3:checked ~ .server-slides {
+		#server-3:checked ~ .slides {
 			transform: translateX(-50%);
 		}
 
-		#server-4:checked ~ .server-slides {
+		#server-4:checked ~ .slides {
 			transform: translateX(-75%);
 		}
 
-		.server-controls {
+		.controls {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			padding: 0 12px 16px;
 		}
 
-		.server-arrow,
-		.server-dots label {
+		.arrow,
+		.dots label {
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
@@ -141,19 +135,19 @@
 			border: none;
 		}
 
-		.server-arrow:hover,
-		.server-dots label:hover {
+		.arrow:hover,
+		.dots label:hover {
 			background-color: rgb(80, 80, 80);
 		}
 
-		.server-dots {
+		.dots {
 			display: flex;
 			justify-content: center;
 			gap: 10px;
 			flex: 1;
 		}
 
-		.server-dots label {
+		.dots label {
 			display: inline-block;
 			width: 12px;
 			height: 12px;
@@ -162,10 +156,10 @@
 			cursor: pointer;
 		}
 
-		#server-1:checked ~ .server-controls .server-dots label[for="server-1"],
-		#server-2:checked ~ .server-controls .server-dots label[for="server-2"],
-		#server-3:checked ~ .server-controls .server-dots label[for="server-3"],
-		#server-4:checked ~ .server-controls .server-dots label[for="server-4"] {
+		#server-1:checked ~ .controls .dots label[for="server-1"],
+		#server-2:checked ~ .controls .dots label[for="server-2"],
+		#server-3:checked ~ .controls .dots label[for="server-3"],
+		#server-4:checked ~ .controls .dots label[for="server-4"] {
 			background-color: rgb(212, 212, 212);
 		}
 	</style>
@@ -192,33 +186,33 @@
 			pain to maintain).</p>
 		<h2>Projects I've worked on</h2>
 
-		<div class="server-slideshow">
+		<div class="slideshow">
 			<input type="radio" name="server-projects" id="server-1" checked>
 			<input type="radio" name="server-projects" id="server-2">
 			<input type="radio" name="server-projects" id="server-3">
 			<input type="radio" name="server-projects" id="server-4">
 
-			<div class="server-slides">
-				<article class="project-card server-slide">
+			<div class="slides">
+				<article class="slide">
 					<h4>Home Server</h4>
 					<p>Here is a picture of my home server where I run all my homelab stuff. You're looking at an Intel Core 2 Duo E7400, nVIDIA 9400 GT (512 MB), and <b>8 GB of DDR2 RAM</b> (enough for a house these days).</p>
 					<img src="assets/Server OLD.jpg" alt="Picture of my home server" />
 				</article>
 
-				<article class="project-card server-slide">
+				<article class="slide">
 					<h4>GPU Upgrade</h4>
 					<p>It was more than due for an upgrade, so I snagged a used Radeon Pro W5500 (8 GB) off eBay for around $70 shipped all the way from Las Vegas.</p>
 					<img src="assets/Radeon Pro W5500.jpg" alt="Picture of my new Radeon Pro W5500" />
 				</article>
 
-				<article class="project-card server-slide">
+				<article class="slide">
 					<h4>Upgraded Server</h4>
 					<p>Here's a picture of the upgraded server with the new GPU installed.</p>
 					<img src="assets/Server OLD Radeon Pro W5500.jpg" alt="Picture of my home server with new GPU installed" />
 					<p>Unfortunately, the W5500 wasn't outputting any video when I plugged it in. I guess the issue is the motherboard being too old (circa 2008) to support a modern GPU. The PCIe slot was only 2.0 so it was a long shot anyway.</p>
 				</article>
 
-				<article class="project-card server-slide">
+				<article class="slide">
 					<h4>Second Upgrade</h4>
 					<p>I ended up shelving the W5500 for a while, but then I saw a beautiful deal on eBay and once again couldn't resist.</p>
 					<img src="assets/Server NEW.jpg" alt="Picture of my new CPU/Motherboard/RAM combo" />
@@ -226,30 +220,28 @@
 				</article>
 			</div>
 
-			<div class="server-controls">
-				<button type="button" class="server-arrow" id="server-prev" aria-label="Previous slide">&#8249;</button>
+			<div class="controls">
+				<button type="button" class="arrow" id="server-prev" aria-label="Previous slide">&#8249;</button>
 
-				<div class="server-dots">
+				<div class="dots">
 					<label for="server-1" aria-label="Home Server"></label>
 					<label for="server-2" aria-label="GPU Upgrade"></label>
 					<label for="server-3" aria-label="Upgraded Server"></label>
 					<label for="server-4" aria-label="Second Upgrade"></label>
 				</div>
 
-				<button type="button" class="server-arrow" id="server-next" aria-label="Next slide">&#8250;</button>
+				<button type="button" class="arrow" id="server-next" aria-label="Next slide">&#8250;</button>
 			</div>
 		</div>
 
-		<div class="projects-grid">
-			<article class="project-card">
-				<h4><a href="https://github.com/ms358/MoVES-MLUI-Mirror">MoVES-MLUI</a></h4>
-				<p>Or as my capstone team and I took to calling it, the OMAPP. Below is a brief video that my team made to explain the operation of the hardware and software of the project. There's also a <a href="assets/Capstone II Group 9 - Final Presentation.pptx">slideshow</a> if you want to take a look.</p>
-				<video width="640" height="480" controls>
-					<source src="assets/OMAPPDemo.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-			</article>
-		</div>
+		<article>
+			<h4><a href="https://github.com/ms358/MoVES-MLUI-Mirror">MoVES-MLUI</a></h4>
+			<p>Or as my capstone team and I took to calling it, the OMAPP. Below is a brief video that my team made to explain the operation of the hardware and software of the project. There's also a <a href="assets/Capstone II Group 9 - Final Presentation.pptx">slideshow</a> if you want to take a look.</p>
+			<video width="640" height="480" controls>
+				<source src="assets/OMAPPDemo.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</article>
 		<h2>Skills I've picked up recently</h2>
 		<li> ERWIN Data Modeler</li>
 		<li> Python </li>
@@ -272,6 +264,7 @@
 		<h2>What I'm learning right now</h2>
 		<li> GCP </li>
 		<li> Azure DevOps </li>
+		<li> Stardog, and knowledge graphs in general</li>
 		<h2>Things I'd like to work on some day</h2>
 		<li> SnowflakeDB </li>
 		
