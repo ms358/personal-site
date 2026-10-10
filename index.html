@@ -14,8 +14,21 @@
 
 		a {
 			color: rgb(212, 212, 212);
-			text-decoration: none;
-			background-color: rgb(50, 50, 50);
+			text-decoration: underline;
+			text-decoration-thickness: 1.5px;
+			text-underline-offset: 0.15em;
+			background-color: transparent;
+			padding: 0 0.12em;
+			border-radius: 0.2em;
+			transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+		}
+
+		a:hover,
+		a:focus-visible {
+			color: rgb(240, 245, 255);
+			background-color: rgba(79, 140, 255, 0.35);
+			box-shadow: inset 0 0 0 1px rgba(112, 170, 255, 0.8);
+			transform: translateY(-1px);
 		}
 
 		header,
