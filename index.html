@@ -72,6 +72,19 @@
 			margin-top: 8px;
 		}
 
+		.resume-wrapper {
+			margin: 12px 0 8px;
+		}
+
+		.resume-frame {
+			display: block;
+			width: 100%;
+			height: 560px;
+			border: 1px solid rgba(212, 212, 212, 0.25);
+			border-radius: 10px;
+			background-color: rgba(255, 255, 255, 0.02);
+		}
+
 		.slideshow {
 			position: relative;
 			margin-top: 20px;
@@ -200,7 +213,11 @@
 	<main>
 		<h2>About me</h2>
 		<p>I'm Melvin. Data analyst by trade, and aspiring data scientist/data engineer/software engineer/IT
-			guy. Here's my <a href="assets/Melvin_Shajee_Resume.pdf">resume</a>.</p>
+			guy.</p>
+		<div class="resume-wrapper">
+			<embed class="resume-frame" src="assets/Melvin_Shajee_Resume.pdf" type="application/pdf" title="Melvin Shajee resume" />
+			<p><a href="assets/Melvin_Shajee_Resume.pdf" target="_blank" rel="noopener">Open resume in a new tab</a></p>
+		</div>
 		<p>I graduated from New Jersey Institute of Technology in May 2025 with a B.S. in Biomedical
 			Engineering. I was originally in a 5 year program and would have gotten an M.S in BME in May of
 			2026, but I grew to love the analytical and data cleaning side of processing biological signals, so instead I moved over to Rutgers Business School. In May of 2026,
